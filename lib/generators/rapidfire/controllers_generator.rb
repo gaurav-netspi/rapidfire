@@ -7,7 +7,7 @@ module Rapidfire
       desc "Copies default Rapidfire controllers to your application."
 
       def copy_controllers
-        view_directory
+        controller_directory :rapidfire
         # view_directory :answer_groups
         # view_directory :answers
         # view_directory :question_groups
@@ -15,8 +15,8 @@ module Rapidfire
       end
 
       protected
-      def view_directory
-        directory name.to_s, "app/controllers/rapidfire/"
+      def controller_directory(name)
+        directory name.to_s, "app/controllers/#{name}"
       end
     end
   end
